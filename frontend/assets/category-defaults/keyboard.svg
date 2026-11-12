@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" fill="none">
+<defs>
+<linearGradient id="metal" x1="80" y1="50" x2="330" y2="270" gradientUnits="userSpaceOnUse"><stop stop-color="#425044"/><stop offset=".45" stop-color="#232d28"/><stop offset="1" stop-color="#101713"/></linearGradient>
+<linearGradient id="silver" x1="160" y1="80" x2="320" y2="240" gradientUnits="userSpaceOnUse"><stop stop-color="#d5dfcf"/><stop offset=".45" stop-color="#8a9c83"/><stop offset="1" stop-color="#c5d4bc"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#a3e635" stop-opacity=".1"/><stop offset="1" stop-color="#a3e635" stop-opacity="0"/></radialGradient>
+<pattern id="keys" width="27" height="25" patternUnits="userSpaceOnUse"><rect x="2" y="2" width="22" height="19" rx="3" fill="#151f18" stroke="#5e7253"/></pattern>
+<g id="fan"><circle cx="42" cy="42" r="44" fill="#0a110c" stroke="#a3e635" stroke-width="3"/><g fill="#465e34"><path d="M42 37C8 4 2 32 28 41Z"/><path d="M42 37C8 4 2 32 28 41Z" transform="rotate(60 42 42)"/><path d="M42 37C8 4 2 32 28 41Z" transform="rotate(120 42 42)"/><path d="M42 37C8 4 2 32 28 41Z" transform="rotate(180 42 42)"/><path d="M42 37C8 4 2 32 28 41Z" transform="rotate(240 42 42)"/><path d="M42 37C8 4 2 32 28 41Z" transform="rotate(300 42 42)"/></g><circle cx="42" cy="42" r="11" fill="#829e65"/></g>
+</defs>
+<ellipse cx="240" cy="164" rx="225" ry="145" fill="url(#glow)"/><title>keyboard category illustration</title><g transform="translate(0 12) rotate(-6 240 150)"><rect x="46" y="81" width="388" height="152" rx="12" fill="url(#metal)" stroke="#6a7f5c" stroke-width="2"/><rect x="57" y="92" width="366" height="126" rx="6" fill="url(#keys)"/><path d="M145 202h143" stroke="#a3e635" stroke-width="12" stroke-linecap="round"/><path d="M63 237h353" stroke="#a3e635" stroke-width="3"/><path d="M72 103h16m-16 25h16m-16 25h16" stroke="#b9eb77" stroke-width="9"/></g></svg>

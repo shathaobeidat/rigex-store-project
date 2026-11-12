@@ -1,0 +1,38 @@
+/* Users retain their own filters and pagination within the Orders visual style. */
+body[data-admin-page=users] .users-overview { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+body[data-admin-page=users] .users-page .table-container { background: linear-gradient(145deg, #ffffff03, transparent 35%), var(--color-surface); }
+body[data-admin-page=users] .users-page .table-header-actions { padding: 20px; border-bottom: 1px solid var(--color-border); gap: 16px; }
+body[data-admin-page=users] .users-page .search-input { height: 40px; min-height: 40px; border-radius: 9px; font-size: 11px; }
+body[data-admin-page=users] .users-page .filters-row { gap: 12px; margin: 0; }
+body[data-admin-page=users] .users-page .filters-row .select-filter { width: 150px; height: 40px; min-height: 40px; padding: 9px 30px 9px 12px; border: 1px solid #303743; border-radius: 9px; background-color: #191d24; font-size: 11px; line-height: 1.4; white-space: nowrap; }
+body[data-admin-page=users] .users-page .users-add-button { height: 40px; min-height: 40px; padding-inline: 16px; border-radius: 9px; font-size: 11px; white-space: nowrap; }
+body[data-admin-page=users] .users-page .management-panel-title h2 { font-size: 16px; font-weight: 700; }
+body[data-admin-page=users] .users-page .management-panel-title p { font-size: 11px; color: var(--color-text-muted); margin-top: 4px; }
+body[data-admin-page=users] .users-page .users-table-scroll { padding-inline: 12px; overflow-x: auto; }
+body[data-admin-page=users] .users-page .data-table { width: 100%; min-width: 650px; border-collapse: collapse; }
+body[data-admin-page=users] .users-page .data-table th { padding: 13px 10px 12px; font-size: 9px; letter-spacing: .9px; text-transform: uppercase; color: var(--color-text-muted); background: transparent; }
+body[data-admin-page=users] .users-page .data-table td { height: 70px; padding: 11px 10px; font-size: 11px; border-bottom: 1px solid var(--color-border); }
+body[data-admin-page=users] .users-page .data-table tbody tr:hover { background: #ffffff06; }
+body[data-admin-page=users] .users-page .user-info-cell { gap: 9px; }
+body[data-admin-page=users] .users-page .user-avatar { width: 33px; height: 33px; border-radius: 9px; font-size: 11px; background: #a3e63512; color: #a3e635; border: 1px solid #a3e63525; flex-shrink: 0; }
+body[data-admin-page=users] .users-page .user-name { font-size: 11px; font-weight: 700; }
+body[data-admin-page=users] .users-page .user-email { font-size: 10px; margin-top: 2px; color: var(--color-text-muted); }
+body[data-admin-page=users] .users-page .badge { padding: 5px 9px; border-radius: 6px; font-size: 10px; font-weight: 600; }
+body[data-admin-page=users] .users-page .action-btn { display: inline-grid; place-items: center; width: 29px; height: 29px; padding: 0; border-radius: 7px; background: #1e251b; border: 1px solid #35462a; color: #a3e635; font-size: 11px; }
+body[data-admin-page=users] .users-page .action-btn.delete { background: #ef44440a; border-color: #ef444430; color: #f87171; }
+body[data-admin-page=users] .users-page .action-btn:hover { border-color: currentColor; }
+body[data-admin-page=users] .users-page .pagination-bar { padding: 15px 20px; margin: 0; border-top: 1px solid var(--color-border); }
+body[data-admin-page=users] .users-page .pagination-info { font-size: 10px; color: var(--color-text-muted); }
+body[data-admin-page=users] .users-page .page-btn { min-width: 29px; height: 29px; font-size: 10px; border-radius: 6px; }
+body[data-admin-page=users] .users-page .modal-card { padding: 26px; max-width: 490px; border: 1px solid #333c4d; border-radius: 16px; background: #121418; box-shadow: 0 30px 100px #0009; }
+body[data-admin-page=users] .users-page .modal-header h3 { font-size: 23px; letter-spacing: -.5px; }
+body[data-admin-page=users] .users-page .form-control { background: #191d24; border-color: #303743; border-radius: 9px; font-size: 12px; }
+body[data-admin-page=users] .users-page .modal-overlay { background: #090a0cc7; backdrop-filter: blur(5px); }
+@media (max-width: 700px) {
+    body[data-admin-page=users] .users-page .filters-row { flex-wrap: wrap; gap: 10px; }
+    body[data-admin-page=users] .users-page .filters-row .select-filter { width: auto; flex: 1 1 130px; }
+    body[data-admin-page=users] .users-overview { grid-template-columns: 1fr; gap: 10px; }
+    body[data-admin-page=users] .users-page .table-header-actions { padding: 14px; }
+    body[data-admin-page=users] .users-page .pagination-bar { padding: 14px; gap: 12px; }
+    body[data-admin-page=users] .users-page .modal-card { padding: 20px; }
+}

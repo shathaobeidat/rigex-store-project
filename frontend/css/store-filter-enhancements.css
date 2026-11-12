@@ -1,0 +1,36 @@
+/* Browser-only filter polish; existing markup hooks and REGIX palette remain intact. */
+.store-page .filter-bar-enhanced { --filter-control-height: 42px; }
+.store-page .filter-bar-enhanced > label:first-child { gap: 8px; }
+.store-page .filter-bar-enhanced > label:first-child > span,
+.store-page .filter-bar-enhanced .catalog-conditions legend { line-height: 14px; min-height: 14px; }
+.store-page .filter-bar-enhanced .catalog-conditions legend { margin-bottom: 8px; line-height: 1.4; }
+.store-page .filter-bar-enhanced .store-search-box input { height: var(--filter-control-height); min-height: var(--filter-control-height); }
+.store-page .filter-bar-enhanced .catalog-conditions .catalog-filter-buttons { box-sizing: border-box; height: var(--filter-control-height); min-height: var(--filter-control-height); align-items: stretch; }
+.store-page .filter-bar-enhanced .catalog-conditions button { min-height: 0; height: 100%; }
+.store-page .filter-bar-enhanced .catalog-categories { min-width: 0; width: 100%; padding-top: 8px; }
+.filter-tabs-viewport { position: relative; min-width: 0; }
+.filter-tabs-viewport::before, .filter-tabs-viewport::after { content: ''; position: absolute; z-index: 2; top: 0; bottom: 0; width: 24px; pointer-events: none; opacity: 0; transition: opacity .18s; }
+.filter-tabs-viewport::before { left: 0; background: linear-gradient(90deg, #101416, #10141600); }
+.filter-tabs-viewport::after { right: 0; background: linear-gradient(270deg, #101416, #10141600); }
+.filter-tabs-viewport.has-scroll-left::before, .filter-tabs-viewport.has-scroll-right::after { opacity: 1; }
+.store-page .filter-bar-enhanced .catalog-categories .catalog-filter-buttons { display: flex; flex-wrap: nowrap; gap: 0 18px; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; scroll-snap-type: x proximity; scroll-behavior: smooth; padding: 3px 3px 0; cursor: grab; touch-action: pan-x pan-y; }
+.filter-bar-enhanced .catalog-categories .catalog-filter-buttons::-webkit-scrollbar { display: none; }
+.store-page .filter-bar-enhanced .catalog-categories .catalog-filter-buttons button { flex: 0 0 auto; white-space: nowrap; scroll-snap-align: start; gap: 7px; color: #c6d1c1; font-weight: 500; user-select: none; }
+.store-page .filter-bar-enhanced .catalog-categories button[aria-selected=true] { color: #b3eb61; font-weight: 650; }
+.store-page .filter-bar-enhanced .catalog-categories button[aria-selected=true]::after { transform: scaleX(1); }
+.store-page .filter-bar-enhanced .catalog-categories button[aria-selected=false]::after { transform: scaleX(0); }
+.store-page .filter-bar-enhanced button[hidden] { display: none !important; }
+.filter-tab-count { display: inline-grid; place-items: center; min-width: 19px; height: 18px; padding-inline: 4px; border-radius: 4px; background: #ffffff08; color: #aebda6; font-size: 9px; font-weight: 500; font-variant-numeric: tabular-nums; }
+[aria-selected=true] .filter-tab-count { background: #a3e63516; color: #c5ee95; }
+.store-page .filter-bar-enhanced #store-clear { min-height: var(--filter-control-height); color: #c6d1c1; border: 1px solid transparent; padding: 8px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s, visibility 0s .18s, border-color .18s; }
+.store-page .filter-bar-enhanced #store-clear.filter-reset-active { opacity: 1; visibility: visible; pointer-events: auto; transition-delay: 0s; }
+.store-page .filter-bar-enhanced #store-clear:hover:not(:disabled) { border-color: #53634a; color: #e1ecd9; }
+.store-page .filter-bar-enhanced #store-clear svg { color: currentColor; }
+.store-page .filter-bar-enhanced .catalog-conditions button:not([aria-pressed=true]) { color: #c6d1c1; }
+.store-page .filter-bar-enhanced [role=tab]:focus-visible { outline: 2px solid #c0ef7a; outline-offset: -2px; border-radius: 4px; }
+.store-page .filter-bar-enhanced .catalog-categories .catalog-filter-buttons.is-dragging { scroll-behavior: auto; scroll-snap-type: none; cursor: grabbing; }
+@media (max-width: 700px) { .store-page .filter-bar-enhanced .catalog-categories .catalog-filter-buttons { gap: 0 16px; } }
+@media (prefers-reduced-motion: reduce) {
+ .store-page .filter-bar-enhanced .catalog-categories .catalog-filter-buttons { scroll-behavior: auto; }
+ .filter-tabs-viewport::before, .filter-tabs-viewport::after, .store-page .filter-bar-enhanced #store-clear { transition: none; }
+}

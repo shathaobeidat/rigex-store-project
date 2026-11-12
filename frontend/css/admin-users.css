@@ -1,0 +1,413 @@
+/* ==========================================================================
+   admin-users.css  -  styles used ONLY by the Users page
+   CHANGED: the layout (sidebar, header, footer, colors, reset, .btn-primary)
+   now comes from css/admin.css through layout.php, so these rules were removed:
+     :root, *, body, a, .brand-logo, .admin-sidebar, .nav-*, .workspace-badge,
+     .admin-main, .top-bar, .page-title, .badge-admin-tag, .dot, .btn-primary
+   Also removed: the stray "ش" character that broke the .modal-header h3 rule.
+   ========================================================================== */
+
+/* CHANGED: admin.css has a generic ".green" rule that paints a background;
+   keep the small green text under the metric value transparent like before */
+.metric-subtext.green {
+  background: transparent;
+}
+
+/* CHANGED: inline error message styles (moved here from the <style> block in users.php) */
+.form-message {
+  display: none;
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: var(--color-error);
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+.form-message.show { display: block; }
+#pageMessage { margin: 0 0 1rem 0; }
+
+/* CHANGED: lets the wide users table scroll sideways on small screens */
+.table-container {
+  overflow-x: auto;
+}
+
+/* ---- original users page styles below ---- */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .metric-card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .metric-title {
+      font-size: 0.75rem;
+      color: var(--color-text-secondary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .metric-value {
+      font-size: 2rem;
+      color: var(--color-text);
+      font-weight: 800;
+      margin: 0.3rem 0;
+      line-height: 1.1;
+    }
+
+    .metric-subtext {
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .metric-subtext.green {
+      color: #a3e635;
+    }
+
+    .metric-subtext span.muted {
+      color: var(--color-text-muted);
+      font-weight: 400;
+    }
+
+    .metric-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    .metric-icon-box.green {
+      background-color: rgba(163, 230, 53, 0.15);
+      color: #a3e635;
+      border: 1px solid rgba(163, 230, 53, 0.2);
+    }
+
+    .metric-icon-box.blue {
+      background-color: rgba(14, 42, 71, 0.8);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .metric-icon-box.orange {
+      background-color: rgba(61, 35, 10, 0.8);
+      color: #f59e0b;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+
+    .table-container {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .table-header-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .top-controls-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      min-width: 260px;
+      max-width: 380px;
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-text-muted);
+    }
+
+    .search-input, .select-filter {
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .search-input {
+      width: 100%;
+      padding-left: 2.5rem;
+    }
+
+    .select-filter {
+      cursor: pointer;
+      outline: none;
+      min-width: 160px;
+    }
+
+    .search-input:focus, .select-filter:focus {
+      border-color: var(--color-primary);
+      outline: none;
+    }
+
+    .filters-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .data-table th {
+      padding: 1rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      border-bottom: 1px solid var(--color-border);
+      font-weight: 700;
+    }
+
+    .data-table td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      vertical-align: middle;
+    }
+
+    .data-table tbody tr:hover {
+      background-color: var(--color-surface-hover);
+    }
+
+    .user-info-cell {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .user-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--color-surface-elevated);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      border: 1px solid var(--color-border);
+    }
+
+    .user-name {
+      color: var(--color-text);
+      font-weight: 600;
+      display: block;
+    }
+
+    .user-email {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+    }
+
+    .badge {
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-badge);
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: inline-block;
+    }
+
+    .badge-role-admin {
+      background-color: rgba(163, 230, 53, 0.15);
+      color: var(--color-primary);
+    }
+
+    .badge-role-customer {
+      background-color: rgba(56, 189, 248, 0.15);
+      color: var(--color-info);
+    }
+
+    .badge-status-active {
+      background-color: rgba(163, 230, 53, 0.1);
+      color: var(--color-success);
+    }
+
+    .badge-status-inactive {
+      background-color: rgba(239, 68, 68, 0.1);
+      color: var(--color-error);
+    }
+
+    .action-btn {
+      background: transparent;
+      border: none;
+      color: var(--color-text-muted);
+      padding: 0.4rem;
+      cursor: pointer;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .action-btn:hover {
+      color: var(--color-text);
+      background-color: var(--color-surface-elevated);
+    }
+
+    .action-btn.ban:hover {
+      color: var(--color-warning);
+    }
+
+    .action-btn.unban:hover {
+      color: var(--color-success);
+    }
+
+    .action-btn.delete:hover {
+      color: var(--color-error);
+    }
+
+    /* POP-UP MODAL STYLES */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(9, 10, 12, 0.8);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      width: 100%;
+      max-width: 520px;
+      padding: 2rem;
+      box-shadow: var(--shadow-card), var(--shadow-glow);
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: translateY(0);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .modal-header h3 {
+      color: var(--color-text);
+      font-size: 1.25rem;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--color-text-muted);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .modal-close:hover {
+      color: var(--color-text);
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-control {
+      width: 100%;
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-control:focus {
+      border-color: var(--color-primary);
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn-secondary {
+      background-color: var(--color-surface-hover);
+      color: var(--color-text);
+      font-weight: 600;
+      padding: 0.65rem 1.25rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+      cursor: pointer;
+      font-size: 0.875rem;
+      transition: background-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--color-surface-elevated);
+    }

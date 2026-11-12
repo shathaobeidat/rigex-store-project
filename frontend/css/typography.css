@@ -1,0 +1,169 @@
+/* REGIX typography, shared by the admin workspace and public storefront. */
+:root {
+    --font-family-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-family-display: "Oxanium", "Inter", system-ui, sans-serif;
+}
+
+body,
+body.admin-management {
+    font-family: var(--font-family-sans);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Gaming headings paired with a quieter reading font for admin content. */
+body[data-admin-page] {
+    --font-family-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-family: var(--font-family-sans);
+}
+
+/* Compact page header with a clear title-first hierarchy. */
+body[data-admin-page] .page-heading {
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+body[data-admin-page] .heading-copy { min-width: 0; }
+body[data-admin-page] .page-heading .eyebrow {
+    margin-bottom: 6px;
+    font-size: 9px;
+    font-weight: 650;
+    letter-spacing: 1.5px;
+}
+body[data-admin-page] .heading-copy h1 {
+    margin: 0 0 5px;
+    font-size: 30px;
+    line-height: 1.15;
+    letter-spacing: -.6px;
+}
+body[data-admin-page] .heading-copy p {
+    margin: 0;
+    font-family: var(--font-family-sans);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #8f9bab;
+}
+body[data-admin-page] .heading-chip {
+    gap: 5px;
+    padding: 5px 9px;
+    border-color: #a3e63520;
+    background: #a3e63506;
+    color: #94ab7c;
+    font-family: var(--font-family-sans);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: .8px;
+}
+@media (max-width: 700px) {
+    body[data-admin-page] .heading-copy h1 { font-size: 25px; }
+    body[data-admin-page] .heading-copy p { font-size: 11px; }
+    body[data-admin-page] .page-heading { margin-bottom: 15px; }
+}
+
+body[data-admin-page] :is(.sidebar, .footer, button, input, select, textarea) {
+    font-family: var(--font-family-sans);
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+}
+
+h1, h2, h3,
+body.admin-management .heading-copy h1,
+.gaming-page .gaming-hero h1 {
+    font-family: var(--font-family-display);
+    font-weight: 700;
+    letter-spacing: -.025em;
+}
+
+.orders-stat > strong,
+.metric-value,
+.kpi-value,
+.stat-value,
+.planner-total strong,
+body.admin-management .metric-value {
+    font-family: var(--font-family-display);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -.025em;
+}
+
+.order-update-dialog,
+.store-search-dialog,
+.store-cart-dialog {
+    font-family: var(--font-family-sans);
+}
+
+.nav-link,
+.main-nav,
+.orders-table,
+.data-table,
+.category-table,
+.catalog-table {
+    font-family: var(--font-family-sans);
+}
+
+.gaming-page .gaming-hero h1 {
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+/* Consistent dark dropdowns throughout the admin workspace. */
+body[data-admin-page] select:not([multiple]):not([size]) {
+    appearance: none;
+    min-height: 38px;
+    border: 1px solid #303743;
+    border-radius: 8px;
+    padding: 9px 34px 9px 12px;
+    background-color: #191d24;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='1.7' stroke-linecap='round'%3E%3Cpath d='m7 10 5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    color: #dce5ef;
+    color-scheme: dark;
+    font-family: var(--font-family-sans);
+    font-size: 12px;
+    line-height: 1.4;
+    cursor: pointer;
+}
+body[data-admin-page] select:hover { border-color: #526a35; }
+body[data-admin-page] select:focus-visible { outline: 2px solid #a3e635; outline-offset: 2px; }
+body[data-admin-page] select option { background: #191d24; color: #e2e8f0; }
+
+@supports (appearance: base-select) {
+    body[data-admin-page] select:not([multiple]):not([size]),
+    body[data-admin-page] select::picker(select) {
+        appearance: base-select;
+    }
+    body[data-admin-page] select:not([multiple]):not([size]) {
+        align-items: center;
+        background-image: none;
+        padding-right: 12px;
+    }
+    body[data-admin-page] select::picker-icon { color: #94a3b8; }
+    body[data-admin-page] select:open::picker-icon { rotate: 180deg; }
+    body[data-admin-page] select::picker(select) {
+        margin-top: 6px;
+        padding: 5px;
+        max-height: 265px;
+        overflow-y: auto;
+        border: 1px solid #343d49;
+        border-radius: 10px;
+        background: #191d24;
+        box-shadow: 0 15px 40px #0008;
+        font-family: var(--font-family-sans);
+    }
+    body[data-admin-page] select option {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 9px 11px;
+        min-height: 35px;
+        border-radius: 6px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    body[data-admin-page] select option:is(:hover, :focus) { background: #a3e63512; outline: none; }
+    body[data-admin-page] select option:checked { color: #a3e635; background: #a3e63512; }
+    body[data-admin-page] select option::checkmark { color: #a3e635; }
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Regix mark">
+<defs><linearGradient id="lime" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#d9ff70"/><stop offset=".5" stop-color="#a3e635"/><stop offset="1" stop-color="#65a30d"/></linearGradient></defs>
+<path d="M5 12H42C45 12 47 13 49 16L61 30 47 43H31L40 34H47L51 30 43 22H15Z" fill="url(#lime)"/>
+<path d="M5 51 27 28H44L35 37H30L17 51Z" fill="url(#lime)"/>
+<path d="M32 39H42L54 51H42Z" fill="url(#lime)"/>
+</svg>

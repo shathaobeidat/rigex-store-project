@@ -1,0 +1,32 @@
+/* Admin account settings, scoped independently of customer management forms. */
+.admin-profile-page { max-width: 1120px; padding-bottom: 28px; }
+.admin-profile-page .pf-top { display: flex; align-items: center; gap: 20px; padding: 24px; margin-bottom: 22px; border: 1px solid #2a322a; border-radius: 14px; background: radial-gradient(ellipse at top left, #a3e6350d, transparent 65%), #111518; }
+.admin-profile-page .pf-avatar { display: grid; place-items: center; flex-shrink: 0; width: 70px; height: 70px; border-radius: 18px; border: 1px solid #a3e6354a; background: #a3e63514; color: #a3e635; font: 700 30px 'Oxanium', sans-serif; }
+.admin-profile-page .pf-top > div:nth-child(2) { min-width: 0; }
+.admin-profile-page .pf-top h2 { margin: 0 0 7px; font: 700 clamp(22px, 2.6vw, 30px)/1.2 'Oxanium', sans-serif; overflow-wrap: anywhere; color: #edf2e8; }
+.admin-profile-page .pf-top p { margin: 0; color: #95a199; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+.admin-profile-page .pf-tags { margin-left: auto; }
+.admin-profile-page .badge { display: inline-flex; padding: 7px 13px; border: 1px solid #a3e63535; border-radius: 30px; background: #a3e6350e; color: #b8e975; font-size: 11px; font-weight: 600; }
+.admin-profile-page .pf-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; align-items: start; }
+.admin-profile-page .pf-panel { min-width: 0; padding: 26px; border: 1px solid #29312d; border-radius: 12px; background: #111518; }
+.admin-profile-page .pf-panel h3 { margin: 0 0 7px; color: #edf2e8; font: 700 19px 'Oxanium', sans-serif; }
+.admin-profile-page .pf-description { margin: 0 0 25px; color: #95a199; font-size: 12px; line-height: 1.7; }
+.admin-profile-page .form-group { margin-bottom: 19px; }
+.admin-profile-page label { display: block; margin-bottom: 8px; color: #c8d1ca; font-size: 12px; font-weight: 500; }
+.admin-profile-page .form-control { box-sizing: border-box; width: 100%; min-height: 45px; padding: 11px 13px; border: 1px solid #303a34; border-radius: 7px; background: #0b0f11; color: #edf2e8; font: inherit; font-size: 13px; color-scheme: dark; transition: border-color .18s; }
+.admin-profile-page .form-control:hover { border-color: #59674b; }
+.admin-profile-page :is(.form-control, .btn-primary):focus-visible { outline: 2px solid #a3e635; outline-offset: 3px; }
+.admin-profile-page .btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; margin-top: 5px; padding: 10px 18px; border: 1px solid #a3e635; border-radius: 8px; background: #a3e635; color: #101609; font: 600 12px 'Inter', sans-serif; cursor: pointer; box-shadow: none; transform: none; }
+.admin-profile-page .btn-primary:hover { background: #b5ed58; border-color: #b5ed58; }
+.admin-profile-page .pf-err { display: block; margin-top: 7px; color: #fca5a5; font-size: 12px; }
+.pf-alert { padding: 14px 18px; margin-bottom: 20px; border: 1px solid #3d5429; border-radius: 9px; background: #a3e6350c; color: #c6ed9e; font-size: 13px; }
+.pf-alert.error { border-color: #723636; background: #ef44440b; color: #fca5a5; }
+@media (max-width: 850px) { .admin-profile-page .pf-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 550px) {
+ .admin-profile-page .pf-top { flex-wrap: wrap; padding: 19px 16px; gap: 14px; }
+ .admin-profile-page .pf-avatar { width: 54px; height: 54px; border-radius: 14px; font-size: 25px; }
+ .admin-profile-page .pf-top > div:nth-child(2) { flex: 1; }
+ .admin-profile-page .pf-tags { margin-left: 68px; }
+ .admin-profile-page .pf-panel { padding: 22px 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .admin-profile-page .form-control { transition: none; } }
